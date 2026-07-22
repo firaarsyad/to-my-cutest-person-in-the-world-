@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>you're on my camera</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .gallery{
+    column-count:4;
+    column-gap:10px;
+    width:min(1000px, 92vw);
+    margin-top:1.5rem;
+  }
+  .gallery img{
+    width:100%; display:block; margin-bottom:10px;
+    border-radius:4px;
+    box-shadow:0 8px 16px rgba(0,0,0,0.25);
+    border:4px solid var(--white);
+    transition:transform 0.25s ease;
+  }
+  .gallery img:hover{ transform:scale(1.03) rotate(-0.5deg); }
+  @media (max-width:900px){ .gallery{ column-count:3; } }
+  @media (max-width:600px){ .gallery{ column-count:2; } }
+
+  .thanks{
+    font-size:clamp(1.6rem, 5vw, 2.6rem);
+    color:var(--white);
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    margin-top:2.4rem;
+  }
+</style>
+</head>
+<body>
+
+<svg class="doodle float" style="top:5%; left:6%; width:30px;" viewBox="0 0 30 30"><path d="M15 1l3 11 11 3-11 3-3 11-3-11-11-3 11-3z" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-linejoin="round"/></svg>
+<svg class="doodle float delay" style="top:6%; right:8%; width:38px;" viewBox="0 0 40 40"><path d="M20 3C22 15 25 18 37 20C25 22 22 25 20 37C18 25 15 22 3 20C15 18 18 15 20 3Z" fill="none" stroke="var(--pink)" stroke-width="2" stroke-linejoin="round"/></svg>
+
+<div class="page" style="padding-top:7vh;">
+  <h1 class="script fade-up d1" style="font-size:clamp(2.2rem,6vw,3.6rem);">you're on my camera</h1>
+  <p class="fade-up d2" style="margin-top:-0.6rem; opacity:0.85; font-size:0.95rem; letter-spacing:0.05em;">walaupun pake hp mu fotoinnya wkwkwkwk</p>
+
+  <div class="gallery fade-up d3">
+    <img src="assets/p5_i0_x63.jpeg" alt="">
+    <img src="assets/p5_i9_x72.jpeg" alt="">
+    <img src="assets/p5_i4_x67.jpeg" alt="">
+    <img src="assets/p5_i1_x64.jpeg" alt="">
+    <img src="assets/p5_i3_x66.jpeg" alt="">
+    <img src="assets/p5_i5_x68.jpeg" alt="">
+    <img src="assets/p5_i11_x74.jpeg" alt="">
+    <img src="assets/p5_i6_x69.jpeg" alt="">
+    <img src="assets/p5_i8_x71.jpeg" alt="">
+    <img src="assets/p5_i2_x65.jpeg" alt="">
+    <img src="assets/p5_i7_x70.jpeg" alt="">
+    <img src="assets/p5_i10_x73.jpeg" alt="">
+    <img src="assets/p5_i12_x75.jpeg" alt="">
+  </div>
+
+  <p class="thanks fade-up d4">thank you, love</p>
+</div>
+
+</body>
+</html>

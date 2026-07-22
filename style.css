@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root{
+  --blue-deep:   #4a6bb5;
+  --blue:        #5d7fc9;
+  --blue-soft:   #7a9adb;
+  --cream:       #f6efdd;
+  --pink:        #f3a9c9;
+  --yellow:      #f5cd52;
+  --teal:        #3fcfa8;
+  --ink:         #1f2b4d;
+  --white:       #fdfaf1;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0; padding:0; height:100%;
+  font-family:'Quicksand', sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.10), transparent 40%),
+    linear-gradient(160deg, var(--blue-deep), var(--blue) 55%, var(--blue-soft));
+  color:var(--white);
+  overflow-x:hidden;
+}
+
+/* paper grain overlay, gives the same soft-textured feel as the original card */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:1;
+}
+
+.page{
+  position:relative;
+  min-height:100vh;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:6vh 6vw;
+  text-align:center;
+  z-index:2;
+}
+
+.script{
+  font-family:'Caveat', cursive;
+  font-weight:700;
+  line-height:1.05;
+}
+
+.headline{
+  font-family:'Quicksand', sans-serif;
+  font-weight:600;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--white);
+  text-shadow:0 2px 18px rgba(0,0,0,0.15);
+}
+
+.eyebrow{
+  font-family:'Quicksand', sans-serif;
+  font-weight:600;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  font-size:0.7rem;
+  color:rgba(255,255,255,0.65);
+  margin-bottom:0.75rem;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:2.75rem;
+  padding:0.85rem 2.4rem;
+  font-family:'Quicksand', sans-serif;
+  font-weight:600;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-size:0.8rem;
+  color:var(--ink);
+  background:rgba(255,255,255,0.82);
+  border:1px solid rgba(255,255,255,0.9);
+  border-radius:999px;
+  text-decoration:none;
+  box-shadow:0 10px 24px rgba(20,30,60,0.25);
+  transition:transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor:pointer;
+}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 30px rgba(20,30,60,0.3);
+  background:var(--white);
+}
+.btn:active{ transform:translateY(0px) scale(0.98); }
+
+.btn.ghost{
+  background:transparent;
+  color:var(--white);
+  border-color:rgba(255,255,255,0.55);
+  box-shadow:none;
+}
+.btn.ghost:hover{ background:rgba(255,255,255,0.12); }
+
+/* doodle decorations, absolutely positioned, echo the hand-drawn stars/squiggles/sparkles from the card */
+.doodle{ position:absolute; z-index:2; opacity:0.9; pointer-events:none; }
+.doodle.float{ animation:bob 6s ease-in-out infinite; }
+.doodle.float.slow{ animation-duration:9s; }
+.doodle.float.delay{ animation-delay:1.4s; }
+
+@keyframes bob{
+  0%,100%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-14px) rotate(6deg); }
+}
+
+.fade-up{
+  animation:fadeUp 0.9s ease both;
+}
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(18px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.d1{ animation-delay:0.1s; }
+.d2{ animation-delay:0.35s; }
+.d3{ animation-delay:0.6s; }
+.d4{ animation-delay:0.85s; }
+
+.step-track{
+  position:fixed;
+  bottom:22px; left:50%;
+  transform:translateX(-50%);
+  display:flex; gap:8px;
+  z-index:5;
+}
+.step-track span{
+  width:6px; height:6px; border-radius:50%;
+  background:rgba(255,255,255,0.35);
+}
+.step-track span.active{ background:var(--white); width:18px; border-radius:4px; }
+
+@media (prefers-reduced-motion: reduce){
+  .doodle.float{ animation:none; }
+  .fade-up{ animation:none; opacity:1; transform:none; }
+}

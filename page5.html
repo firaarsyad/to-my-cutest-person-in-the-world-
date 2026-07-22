@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>surat buat kamu</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .letter-card{
+    width:min(560px, 88vw);
+    background:var(--white);
+    border-radius:6px;
+    padding:3rem 2.4rem;
+    box-shadow:0 24px 40px rgba(0,0,0,0.28);
+    position:relative;
+  }
+  .letter-card p{
+    font-family:'Caveat', cursive;
+    color:var(--ink);
+    font-size:clamp(1.15rem, 2.6vw, 1.5rem);
+    line-height:1.5;
+    margin:0 0 1.1rem 0;
+  }
+  .letter-card p:last-child{ margin-bottom:0; }
+
+  .arrow-link{
+    position:fixed;
+    right:6%; top:50%;
+    transform:translateY(-50%);
+    width:52px; height:52px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.85);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 20px rgba(0,0,0,0.25);
+    text-decoration:none;
+    transition:transform 0.25s ease, background 0.25s ease;
+  }
+  .arrow-link:hover{ transform:translateY(-50%) translateX(6px); background:var(--white); }
+  .arrow-link svg{ width:20px; height:20px; }
+
+  @media (max-width:640px){
+    .arrow-link{ position:static; margin-top:2rem; transform:none; }
+    .arrow-link:hover{ transform:translateX(4px); }
+  }
+</style>
+</head>
+<body>
+
+<svg class="doodle float" style="top:8%; left:6%; width:28px;" viewBox="0 0 30 30"><path d="M15 1l3 11 11 3-11 3-3 11-3-11-11-3 11-3z" fill="none" stroke="var(--pink)" stroke-width="2" stroke-linejoin="round"/></svg>
+<svg class="doodle float delay" style="bottom:8%; right:8%; width:34px;" viewBox="0 0 40 40"><path d="M20 3C22 15 25 18 37 20C25 22 22 25 20 37C18 25 15 22 3 20C15 18 18 15 20 3Z" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linejoin="round"/></svg>
+
+<div class="page" style="justify-content:center;">
+  <div class="letter-card fade-up d1">
+    <p>halo sayanggg hehehehe</p>
+    <p>happy 21+ day sayangg, sudah legal? 21+? wkwkwkkwkwkwkw</p>
+    <p>di umur yang bertambah, semoga semua kesempatan dan keberuntungan datang, semoga di kehidupan umur 21 ini kamu menjadi the better person dari hari sebelumnya. semoga semua wishlist kamu tercapai. kamu, semoga segala penyesalan berkurang dan lebih menikmati hidup.</p>
+  </div>
+
+  <a href="page6.html" class="arrow-link fade-up d2" aria-label="lanjut">
+    <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </a>
+</div>
+
+<div class="step-track">
+  <span></span><span></span><span></span><span></span><span class="active"></span><span></span>
+</div>
+
+</body>
+</html>

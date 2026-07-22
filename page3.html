@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ada surat buat kamu</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .envelope-wrap{
+    width:min(420px, 70vw);
+    margin:1.5rem 0 0.5rem 0;
+    animation:wobble 3.2s ease-in-out infinite;
+  }
+  .envelope-wrap img{ width:100%; filter:drop-shadow(0 18px 26px rgba(0,0,0,0.3)); }
+  @keyframes wobble{
+    0%,100%{ transform:rotate(-1.5deg); }
+    50%{ transform:rotate(1.5deg); }
+  }
+  @media (prefers-reduced-motion: reduce){ .envelope-wrap{ animation:none; } }
+</style>
+</head>
+<body>
+
+<svg class="doodle float" style="top:8%; left:10%; width:30px;" viewBox="0 0 30 30"><path d="M15 1l3 11 11 3-11 3-3 11-3-11-11-3 11-3z" fill="none" stroke="var(--pink)" stroke-width="2" stroke-linejoin="round"/></svg>
+<svg class="doodle float delay" style="bottom:14%; right:10%; width:38px;" viewBox="0 0 40 40"><path d="M20 3C22 15 25 18 37 20C25 22 22 25 20 37C18 25 15 22 3 20C15 18 18 15 20 3Z" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linejoin="round"/></svg>
+
+<div class="page">
+  <div class="eyebrow fade-up d1">ssstt</div>
+  <h1 class="headline fade-up d2" style="font-size:clamp(1rem,3vw,1.4rem);">ada surat kecil buat kamu</h1>
+
+  <div class="envelope-wrap fade-up d3">
+    <img src="assets/p2_i0_x45.png" alt="amplop tertutup">
+  </div>
+
+  <a href="page4.html" class="btn fade-up d4">next</a>
+</div>
+
+<div class="step-track">
+  <span></span><span></span><span class="active"></span><span></span><span></span><span></span>
+</div>
+
+</body>
+</html>
